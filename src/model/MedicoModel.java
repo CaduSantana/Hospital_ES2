@@ -63,9 +63,9 @@ public class MedicoModel  implements Serializable{
 		return new DiagnosticoModel(0, areaPlantao, crm, areaPlantao, null, null, null, null);
 	}
 	
-	private ReceitaModel inserirReceitaMedicamento() {
-		return new ReceitaModel(0, areaPlantao, 0, null, 0);
-	}
+//	private ReceitaModel inserirReceitaMedicamento() {
+//		return new ReceitaModel(0, areaPlantao, 0, null, 0);
+//	}
 	
 	private TratamentoModel inserirTratamento() {
 		return new TratamentoModel(0, crm, areaPlantao, null);

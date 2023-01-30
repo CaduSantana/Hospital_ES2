@@ -7,22 +7,21 @@ public class TriagemModel  implements Serializable{
 	
 	private float peso;
 	private float altura;
-	private String pressao;
+	private float pressao;
 	private int temperatura;
 	private PacienteModel paciente;
 	private AssistenteModel assistente;
 	private String sintomas;
 	
 	// Construtor
-	public TriagemModel(float peso, float altura, String pressao, int temperatura, PacienteModel paciente,
-			AssistenteModel assistente, String sintomas) {
+	public TriagemModel(AssistenteModel assistente, PacienteModel paciente, float altura, float pressao, float peso, int temperatura, String sintomas) {
 		super();
-		this.peso = peso;
+		this.assistente = assistente;
+		this.paciente = paciente;
 		this.altura = altura;
 		this.pressao = pressao;
+		this.peso = peso;
 		this.temperatura = temperatura;
-		this.paciente = paciente;
-		this.assistente = assistente;
 		this.sintomas = sintomas;
 	}
 	
@@ -44,11 +43,11 @@ public class TriagemModel  implements Serializable{
 		this.altura = altura;
 	}
 
-	public String getPressao() {
+	public float getPressao() {
 		return pressao;
 	}
 
-	public void setPressao(String pressao) {
+	public void setPressao(float pressao) {
 		this.pressao = pressao;
 	}
 

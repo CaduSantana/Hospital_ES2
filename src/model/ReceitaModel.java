@@ -4,9 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class ReceitaModel implements Serializable {
+	
 	// Variáveis
 	
 	private int idReceita;
+	private String cpfPaciente;
 	private String nome;
 	private float dosagem;
 	private Date horario;
@@ -14,9 +16,10 @@ public class ReceitaModel implements Serializable {
 	
 	// Construtor
 	
-	public ReceitaModel(int idReceita, String nome, float dosagem, Date horario, int qtdDias) {
+	public ReceitaModel(int idReceita, String cpfPaciente, String nome, float dosagem, Date horario, int qtdDias) {
 		super();
 		this.idReceita = idReceita;
+		this.cpfPaciente = cpfPaciente;
 		this.nome = nome;
 		this.dosagem = dosagem;
 		this.horario = horario;
@@ -28,9 +31,17 @@ public class ReceitaModel implements Serializable {
 	public int getIdReceita() {
 		return idReceita;
 	}
-
+	
 	public void setIdReceita(int idReceita) {
 		this.idReceita = idReceita;
+	}
+
+	public String getCpfPaciente() {
+		return cpfPaciente;
+	}
+
+	public void setCpfPaciente(String cpfPaciente) {
+		this.cpfPaciente = cpfPaciente;
 	}
 
 	public String getNome() {

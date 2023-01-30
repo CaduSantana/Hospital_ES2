@@ -39,7 +39,7 @@ public class Database {
 	
 	public static AssistenteModel pesquisarAssistente(String cpfAssistente) {
 		for (AssistenteModel assistente : assistentes) {
-			if(assistente.getCpf() == cpfAssistente)
+			if(assistente.getCpf().equals(cpfAssistente))
 				return assistente;
 		}
 		
@@ -56,8 +56,9 @@ public class Database {
 	}
 	
 	public static PacienteModel pesquisarPaciente(String cpfPaciente) {
+		System.out.println(cpfPaciente);
 		for (PacienteModel paciente : pacientes) {
-			if(paciente.getCpf() == cpfPaciente)
+			if(paciente.getCpf().equals(cpfPaciente))
 				return paciente;
 		}
 		
@@ -94,7 +95,7 @@ public class Database {
 	public static TriagemModel pesquisarTriagem(String cpfPaciente) {
 		PacienteModel pacienteAux = pesquisarPaciente(cpfPaciente);
 		for (TriagemModel triagem : triagens) {
-			if(triagem.getPaciente() == pacienteAux)
+			if(triagem.getPaciente().equals(pacienteAux))
 				return triagem;
 		}
 		
@@ -103,7 +104,7 @@ public class Database {
 	
 	public static MedicoModel pesquisarMedico(String crm) {
 		for (MedicoModel medico : medicos) {
-			if(medico.getCrm() == crm)
+			if(medico.getCrm().equals(crm))
 				return medico;
 		}
 		
@@ -225,8 +226,10 @@ public class Database {
 	      }
 	}
 	
-	public static void listarAssistentes() {
-		System.out.println(medicos.toString());
+	public static void listar() {
+		for (PacienteModel paciente : pacientes) {
+			System.out.println(paciente.getCpf());
+		}
 	}
 	
 	

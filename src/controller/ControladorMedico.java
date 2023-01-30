@@ -32,10 +32,10 @@ public class ControladorMedico {
 		return new MedicoModel(nome, crm,  false, areaPlantao);
 	}
 
-	public ReceitaModel criarReceita(String nome, float dosagem, Date horario, int qtdDias) {
+	public ReceitaModel criarReceita(String nome, String cpfPaciente, float dosagem, Date horario, int qtdDias) {
 		int idAtual = Database.receitas.size() + 1;
 		
-		return new ReceitaModel(idAtual, nome, dosagem, horario, qtdDias);
+		return new ReceitaModel(idAtual, nome, cpfPaciente, dosagem, horario, qtdDias);
 	}
 
 	public TratamentoModel criarTratamento(ControladorPaciente controladorPaciente, String cpfPaciente,

@@ -23,7 +23,7 @@ public class teste {
 //		ControladorMedico controladorMedico = new ControladorMedico();
 //		
 //		Database.assistentes.add(controladorGeral.solicitarCriarAssistente("Marcos", "09088371431", "mail@mail.com", "40028922"));
-//		Database.pacientes.add(controladorGeral.solicitarCriarPaciente(controladorPaciente, "09088371431", "Zeca", "28343544803", "paciente@mail.com", "Rua Nova"));
+//		Database.pacientes.add(controladorGeral.solicitarCriarPaciente(controladorPaciente, "09088371431", "Zeca", "28343544803", "40028922", "Rua Nova"));
 //		System.out.println(controladorGeral.solicitarPesquisarPaciente(controladorPaciente, "09088371431", "28343544803"));
 //		Database.medicos.add(controladorGeral.solicitarCriarMedico(controladorMedico, "Estranho", "12345", true, "Sangue"));
 //		Database.exames.add(controladorGeral.solicitarCriarExame(controladorPaciente, "Sangue", "Zeca", "Estranho", "Turbo AIDS", false));
@@ -42,9 +42,10 @@ public class teste {
 //		Database.diagnosticos.add(controladorGeral.solicitarCriarDiagnositco(controladorPaciente, "28343544803", "12345", "Virose", exames, tratamento, triagem, receitas));
 //		
 //		Database.salvarDados();
-//		Database.carregarDados();
+		Database.carregarDados();
+		Database.pesquisarPaciente("09088371431");
 //
-//		Database.listarAssistentes();
+		Database.listar();
 //		System.out.println("Fim");
 
 		MainWindow mainWindow = new MainWindow();

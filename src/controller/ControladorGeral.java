@@ -36,19 +36,19 @@ public class ControladorGeral {
 		return controladorGerente.criarMedico(controladorMedico, nome, crm, plantao, areaPlantao);
 	}
 	
-	public PacienteModel solicitarCriarPaciente(ControladorPaciente controladorPaciente, String cpfAssistente, String nome, String cpfPaciente, String email, String endereco) {
-		return controladorAssistente.criarPaciente(controladorPaciente, cpfAssistente, nome, cpfPaciente, email, endereco);
+	public PacienteModel solicitarCriarPaciente(ControladorPaciente controladorPaciente, String cpfAssistente, String nome, String cpfPaciente, String telefone, String endereco) {
+		return controladorAssistente.criarPaciente(controladorPaciente, cpfAssistente, nome, cpfPaciente, telefone, endereco);
 	}
 	
-	public ReceitaModel solicitarCriarReceita(String nome, float dosagem, Date horario, int qtdDias) {
-		return controladorMedico.criarReceita(nome, dosagem, horario, qtdDias);
+	public ReceitaModel solicitarCriarReceita(String nome, String cpfPaciente, float dosagem, Date horario, int qtdDias) {
+		return controladorMedico.criarReceita(nome, cpfPaciente, dosagem, horario, qtdDias);
 	}
 	
 	public TratamentoModel solicitarCriarTratamento(ControladorPaciente controladorPaciente, String cpfPaciente, ArrayList<String> recomendacoes, String crm) {
 		return controladorMedico.criarTratamento(controladorPaciente, cpfPaciente, recomendacoes, crm);
 	}
 	
-	public TriagemModel solicitarFazerTriagem(ControladorPaciente controladorPaciente, String cpfFuncionario, String cpfPaciente, float altura, float pressao, float peso, float temperatura, String sintomas) {
+	public TriagemModel solicitarFazerTriagem(ControladorPaciente controladorPaciente, String cpfFuncionario, String cpfPaciente, float altura, float pressao, float peso, int temperatura, String sintomas) {
 		return controladorAssistente.criarTriagem(controladorPaciente, cpfFuncionario, cpfPaciente, altura, pressao, peso, temperatura, sintomas);
 	}
 	

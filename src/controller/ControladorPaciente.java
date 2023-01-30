@@ -7,9 +7,9 @@ public class ControladorPaciente {
 	
 
 	public PacienteModel criar(ControladorPaciente controladorPaciente, String cpfAssistente, String nome,
-			String cpfPaciente, String email, String endereco) {
+			String cpfPaciente, String telefone, String endereco) {
 		// TODO Auto-generated method stub
-		return new PacienteModel(nome, cpfPaciente, endereco, endereco);
+		return new PacienteModel(nome, cpfPaciente, telefone, endereco);
 		
 	}
 

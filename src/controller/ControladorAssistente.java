@@ -15,14 +15,16 @@ public class ControladorAssistente {
 	}
 
 	public PacienteModel criarPaciente(ControladorPaciente controladorPaciente, String cpfAssistente, String nome,
-			String cpfPaciente, String email, String endereco) {
-		return controladorPaciente.criar(controladorPaciente, cpfAssistente, nome, cpfPaciente, email, endereco);
+			String cpfPaciente, String telefone, String endereco) {
+		return controladorPaciente.criar(controladorPaciente, cpfAssistente, nome, cpfPaciente, telefone, endereco);
 	}
 
 	public TriagemModel criarTriagem(ControladorPaciente controladorPaciente, String cpfFuncionario,
-			String cpfPaciente, float altura, float pressao, float peso, float temperatura, String sintomas) {
-//		controladorPaciente.getByCpf(cpfPaciente);
-		return new TriagemModel(peso, altura, cpfPaciente, 0, null, null, sintomas);
+		String cpfPaciente, float altura, float pressao, float peso, int temperatura, String sintomas) {
+		PacienteModel paciente = Database.pesquisarPaciente(cpfPaciente);
+		AssistenteModel assistente = Database.pesquisarAssistente(cpfFuncionario);
+		
+		return new TriagemModel(assistente, paciente, altura, pressao, peso, temperatura, sintomas);
 	}
 
 	public PacienteModel pesquisarPaciente(ControladorPaciente controladorPaciente2, String cpfFuncionario,

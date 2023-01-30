@@ -45,7 +45,9 @@ public class CadastrarAssistenteGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastrarAssistenteGUI() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		setTitle("Cadastrar assistente");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 565, 290);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

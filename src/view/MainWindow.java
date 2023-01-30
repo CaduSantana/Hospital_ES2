@@ -41,6 +41,7 @@ public class MainWindow {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -81,9 +82,25 @@ public class MainWindow {
 		JMenuItem mntmCadastrarPaciente = new JMenuItem("Cadastrar paciente");
 		mntmCadastrarPaciente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				CadastrarPacienteGUI cadastrarPacienteGUI = new CadastrarPacienteGUI();
+				cadastrarPacienteGUI.show();
 			}
 		});
 		mnOperacoes.add(mntmCadastrarPaciente);
+		
+		JMenuItem mntmCriarExame = new JMenuItem("Criar exame");
+		mntmCriarExame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CriarExameGUI criarExameGUI = new CriarExameGUI();
+				criarExameGUI.show();
+			}
+		});
+		mnOperacoes.add(mntmCriarExame);
+		
+		JMenuItem mntmCriarReceita = new JMenuItem("Gerar receita");
+		mnOperacoes.add(mntmCriarReceita);
+		
+		JMenuItem mntmTriagem = new JMenuItem("Realizar triagem");
+		mnOperacoes.add(mntmTriagem);
 	}
 }
