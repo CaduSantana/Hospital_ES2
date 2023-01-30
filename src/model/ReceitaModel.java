@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class ReceitaModel {
+public class ReceitaModel implements Serializable {
 	// Variáveis
 	
 	private int idReceita;

@@ -1,6 +1,8 @@
 package model;
 
-public class TriagemModel {
+import java.io.Serializable;
+
+public class TriagemModel  implements Serializable{
 	// Variáveis
 	
 	private float peso;

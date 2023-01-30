@@ -1,6 +1,8 @@
 package model;
 
-public class ExameModel {
+import java.io.Serializable;
+
+public class ExameModel  implements Serializable{
 	// Variáveis
 	
 	private int idExame;

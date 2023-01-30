@@ -1,6 +1,8 @@
 package model;
 
-public class MedicoModel {
+import java.io.Serializable;
+
+public class MedicoModel  implements Serializable{
 	// Variáveis
 	
 	private String nome;

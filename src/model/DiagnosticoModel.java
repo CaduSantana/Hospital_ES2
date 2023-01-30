@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DiagnosticoModel {
+public class DiagnosticoModel implements Serializable{
 	// Variáveis 
 	
 	private int idDiagnostico;

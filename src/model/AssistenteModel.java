@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class AssistenteModel extends FuncionarioModel {
+public class AssistenteModel extends FuncionarioModel implements Serializable{
 
 	// Construtor
 	public AssistenteModel(String nome, String cpf, String email, String senha, Date horarioEntrada, Date horarioSaida,

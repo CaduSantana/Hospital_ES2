@@ -1,5 +1,10 @@
 package database;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import model.AssistenteModel;
@@ -105,6 +110,124 @@ public class Database {
 		return null;
 	}
 	
+	
+	// Serialização
+	
+	public static void salvarDados() {
+		try {
+			FileOutputStream fileOutAssistentes = new FileOutputStream("assistentes.ser");
+            ObjectOutputStream outAssistentes = new ObjectOutputStream(fileOutAssistentes);
+            outAssistentes.writeObject(assistentes);
+            outAssistentes.close();
+            fileOutAssistentes.close();
+            
+			FileOutputStream fileOutDiagnosticos = new FileOutputStream("diagnosticos.ser");
+            ObjectOutputStream outDiagnosticos = new ObjectOutputStream(fileOutDiagnosticos);
+            outDiagnosticos.writeObject(diagnosticos);
+            outDiagnosticos.close();
+            fileOutDiagnosticos.close();
+            
+			FileOutputStream fileOutExames = new FileOutputStream("exames.ser");
+            ObjectOutputStream outExames = new ObjectOutputStream(fileOutExames);
+            outExames.writeObject(exames);
+            outExames.close();
+            fileOutExames.close();
+            
+			FileOutputStream fileOutPacientes = new FileOutputStream("pacientes.ser");
+            ObjectOutputStream outPacientes = new ObjectOutputStream(fileOutPacientes);
+            outPacientes.writeObject(pacientes);
+            outPacientes.close();
+            fileOutPacientes.close();
+            
+			FileOutputStream fileOutReceitas = new FileOutputStream("receitas.ser");
+            ObjectOutputStream outReceitas = new ObjectOutputStream(fileOutReceitas);
+            outReceitas.writeObject(receitas);
+            outReceitas.close();
+            fileOutReceitas.close();
+            
+			FileOutputStream fileOutTratamentos = new FileOutputStream("tratamentos.ser");
+            ObjectOutputStream outTratamentos = new ObjectOutputStream(fileOutTratamentos);
+            outTratamentos.writeObject(tratamentos);
+            outTratamentos.close();
+            fileOutTratamentos.close();
+            
+			FileOutputStream fileOutTriagem = new FileOutputStream("triagem.ser");
+            ObjectOutputStream outTriagem = new ObjectOutputStream(fileOutTriagem);
+            outTriagem.writeObject(triagens);
+            outTriagem.close();
+            fileOutTriagem.close();
+            
+			FileOutputStream fileOutMedico = new FileOutputStream("medico.ser");
+            ObjectOutputStream outMedico = new ObjectOutputStream(fileOutMedico);
+            outMedico.writeObject(medicos);
+            outMedico.close();
+            fileOutMedico.close();
+
+            System.out.printf("\n\tOs dados serializados estão em cada arquivo .ser pertinente à entidade sujeita.\n");
+		}
+		catch (IOException i) {
+            i.printStackTrace();
+        }
+	}
+	
+	public static void carregarDados() {
+		
+		try {
+	         FileInputStream fileInAssistentes = new FileInputStream("assistentes.ser");
+	         ObjectInputStream inAssistentes = new ObjectInputStream(fileInAssistentes);
+	         assistentes = (ArrayList<AssistenteModel>) inAssistentes.readObject();
+	         inAssistentes.close();
+	         fileInAssistentes.close();
+	         
+	         FileInputStream fileInDiagnosticos = new FileInputStream("diagnosticos.ser");
+	         ObjectInputStream inDiagnosticos = new ObjectInputStream(fileInDiagnosticos);
+	         diagnosticos = (ArrayList<DiagnosticoModel>) inDiagnosticos.readObject();
+	         inDiagnosticos.close();
+	         fileInDiagnosticos.close();
+	         
+	         FileInputStream fileInExames = new FileInputStream("exames.ser");
+	         ObjectInputStream inExames = new ObjectInputStream(fileInExames);
+	         exames = (ArrayList<ExameModel>) inExames.readObject();
+	         inExames.close();
+	         fileInExames.close();
+	         
+	         FileInputStream fileInPacientes = new FileInputStream("pacientes.ser");
+	         ObjectInputStream inPacientes = new ObjectInputStream(fileInPacientes);
+	         pacientes = (ArrayList<PacienteModel>) inPacientes.readObject();
+	         inPacientes.close();
+	         fileInPacientes.close();
+	         
+	         FileInputStream fileInReceitas = new FileInputStream("receitas.ser");
+	         ObjectInputStream inReceitas = new ObjectInputStream(fileInReceitas);
+	         receitas = (ArrayList<ReceitaModel>) inReceitas.readObject();
+	         inReceitas.close();
+	         fileInReceitas.close();
+	         
+	         FileInputStream fileInTratamentos = new FileInputStream("tratamentos.ser");
+	         ObjectInputStream inTratamentos = new ObjectInputStream(fileInTratamentos);
+	         tratamentos = (ArrayList<TratamentoModel>) inTratamentos.readObject();
+	         inTratamentos.close();
+	         fileInTratamentos.close();
+	         
+	         FileInputStream fileInTriagem = new FileInputStream("triagem.ser");
+	         ObjectInputStream inTriagem = new ObjectInputStream(fileInTriagem);
+	         triagens = (ArrayList<TriagemModel>) inTriagem.readObject();
+	         inTriagem.close();
+	         fileInTriagem.close();
+	         
+	         FileInputStream fileInMedicos = new FileInputStream("medicos.ser");
+	         ObjectInputStream inMedicos = new ObjectInputStream(fileInMedicos);
+	         medicos = (ArrayList<MedicoModel>) inMedicos.readObject();
+	         inMedicos.close();
+	         fileInMedicos.close();	         
+		} catch (IOException | ClassNotFoundException i) {
+	         i.printStackTrace();
+	      }
+	}
+	
+	public static void listarAssistentes() {
+		System.out.println(medicos.toString());
+	}
 	
 	
 	

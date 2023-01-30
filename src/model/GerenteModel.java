@@ -1,8 +1,9 @@
  package model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class GerenteModel extends FuncionarioModel{
+public class GerenteModel extends FuncionarioModel implements Serializable{
 
 	public GerenteModel(String nome, String cpf, String email, String senha, Date horarioEntrada, Date horarioSaida,
 			String telefone, String salario) {
