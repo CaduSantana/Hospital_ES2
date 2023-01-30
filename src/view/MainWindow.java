@@ -98,9 +98,51 @@ public class MainWindow {
 		mnOperacoes.add(mntmCriarExame);
 		
 		JMenuItem mntmCriarReceita = new JMenuItem("Gerar receita");
+		mntmCriarReceita.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CriarReceitaGUI criarReceitaGUI = new CriarReceitaGUI();
+				criarReceitaGUI.show();
+			}
+		});
 		mnOperacoes.add(mntmCriarReceita);
 		
 		JMenuItem mntmTriagem = new JMenuItem("Realizar triagem");
+		mntmTriagem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RealizarTriagemGUI realizarTriagemGUI = new RealizarTriagemGUI();
+				realizarTriagemGUI.show();
+			}
+		});
 		mnOperacoes.add(mntmTriagem);
+		
+		JMenuItem mntmCriarTratamento = new JMenuItem("Criar tratamento");
+		mntmCriarTratamento.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CriarTratamentoGUI criarTratamentoGUI = new CriarTratamentoGUI();
+				criarTratamentoGUI.show();
+			}
+		});
+		mnOperacoes.add(mntmCriarTratamento);
+		
+		JMenuItem mntmDiagnostico = new JMenuItem("Realizar diagnostico");
+		mntmDiagnostico.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RealizarDiagnosticoGUI realizarDiagnosticoGUI = new RealizarDiagnosticoGUI();
+				realizarDiagnosticoGUI.show();
+			}
+		});
+		mnOperacoes.add(mntmDiagnostico);
+		
+		JMenu mnRelatorio = new JMenu("Relatório");
+		menuBar.add(mnRelatorio);
+		
+		JMenuItem mntmFicha = new JMenuItem("Ficha de paciente");
+		mntmFicha.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FichaPacienteGUI fichaPacienteGUI = new FichaPacienteGUI();
+				fichaPacienteGUI.show();
+			}
+		});
+		mnRelatorio.add(mntmFicha);
 	}
 }
