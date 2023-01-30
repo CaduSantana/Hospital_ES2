@@ -3,14 +3,15 @@ package model;
 public class MedicoModel {
 	// Variáveis
 	
+	private String nome;
 	private String crm;
 	private boolean plantao;
 	private String areaPlantao;
 	
 	// Construtor
 	
-	public MedicoModel(String crm, boolean plantao, String areaPlantao) {
-		super();
+	public MedicoModel(String nome, String crm, boolean plantao, String areaPlantao) {
+		this.nome = nome;
 		this.crm = crm;
 		this.plantao = plantao;
 		this.areaPlantao = areaPlantao;
@@ -20,6 +21,14 @@ public class MedicoModel {
 	
 	public String getCrm() {
 		return crm;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public void setCrm(String crm) {

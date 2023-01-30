@@ -5,16 +5,16 @@ import java.util.ArrayList;
 public class TratamentoModel {
 	// Variáveis
 	
-	private int idDiagnostico;
+	private int idTratamento;
 	private String nomePaciente;
 	private String nomeMedico;
 	private ArrayList<String> recomendacoesMedico;
 	
 	// Construtor
-	public TratamentoModel(int idDiagnostico, String nomePaciente, String nomeMedico,
+	public TratamentoModel(int idTratamento, String nomePaciente, String nomeMedico,
 			ArrayList<String> recomendacoesMedico) {
 		super();
-		this.idDiagnostico = idDiagnostico;
+		this.idTratamento = idTratamento;
 		this.nomePaciente = nomePaciente;
 		this.nomeMedico = nomeMedico;
 		this.recomendacoesMedico = recomendacoesMedico;
@@ -22,11 +22,11 @@ public class TratamentoModel {
 	
 	// Getters e Setters
 	
-	public int getIdDiagnostico() {
-		return idDiagnostico;
+	public int getIdTratamento() {
+		return idTratamento;
 	}
-	public void setIdDiagnostico(int idDiagnostico) {
-		this.idDiagnostico = idDiagnostico;
+	public void setIdTratamento(int idTratamento) {
+		this.idTratamento = idTratamento;
 	}
 	public String getNomePaciente() {
 		return nomePaciente;
@@ -46,6 +46,4 @@ public class TratamentoModel {
 	public void setRecomendacoesMedico(ArrayList<String> recomendacoesMedico) {
 		this.recomendacoesMedico = recomendacoesMedico;
 	}
-	
-	
 }

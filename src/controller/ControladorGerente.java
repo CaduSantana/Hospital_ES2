@@ -8,14 +8,13 @@ public class ControladorGerente {
 	ControladorAssistente controladorAssistente = new ControladorAssistente();
 	ControladorMedico controladorMedico = new ControladorMedico();
 	
-	public AssistenteModel criarAssistente(String cpf, String nome, String email, String telefone) {
-		return controladorAssistente.criar(cpf, nome, email, telefone);
+	public AssistenteModel criarAssistente(String nome, String cpf, String email, String telefone) {
+		return controladorAssistente.criar(nome, cpf, email, telefone);
 	}
 
-	public MedicoModel criarMedico(ControladorMedico controladorMedico, String nome, String cpf, String telefone,
-			String crm, String especializacao, String cpfGerente) {
+	public MedicoModel criarMedico(ControladorMedico controladorMedico, String nome, String crm, boolean plantao, String areaPlantao) {
 		// TODO Auto-generated method stub
-		return controladorMedico.criar(nome, cpf, telefone, crm, especializacao);
+		return controladorMedico.criar(nome, crm, plantao, areaPlantao);
 	}
 
 }

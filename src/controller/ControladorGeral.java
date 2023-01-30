@@ -23,27 +23,36 @@ public class ControladorGeral {
 		return controladorGerente.criarAssistente(nome, cpf, email, telefone);
 	}
 	
-	public DiagnosticoModel solicitarCriarDiagnositco(ControladorPaciente controladorPaciente, String cpfPaciente, String cpfMedico, ArrayList <ExameModel> exames, TratamentoModel tratamento, TriagemModel triagem, ArrayList <ReceitaModel> receitas) {
-		return controladorMedico.criarDiagnostico(controladorPaciente, cpfPaciente, cpfMedico, exames, tratamento, triagem, receitas);
+	public DiagnosticoModel solicitarCriarDiagnositco(ControladorPaciente controladorPaciente, String cpfPaciente, String crm, String causaDoProblema, ArrayList <ExameModel> exames, TratamentoModel tratamento, TriagemModel triagem, ArrayList <ReceitaModel> receitas) {
+		return controladorMedico.criarDiagnostico(controladorPaciente, cpfPaciente, crm, causaDoProblema, exames, tratamento, triagem, receitas);
 	}
 	
-	public ExameModel solicitarCriarExame(ControladorPaciente controladorPaciente, String cpfPaciente, String nomeExame, boolean grave, String cpfMedico) {
-		return controladorMedico.criarExame(controladorPaciente, cpfPaciente, nomeExame, grave, cpfMedico);
+	public ExameModel solicitarCriarExame(ControladorPaciente controladorPaciente, String nomeExame, String nomePaciente, String nomeMedico,
+			String resultadoExame, boolean grave) {
+		return controladorMedico.criarExame(controladorPaciente, nomeExame, nomePaciente, nomeMedico, resultadoExame, grave);
 	}
 	
-	public MedicoModel solicitarCriarMedico(ControladorMedico controladorMedico, String name, String cpf, String telefone, String crm, String especializacao, String cpfGerente) {
-		return controladorGerente.criarMedico(controladorMedico, name, cpf, telefone, crm, especializacao, cpfGerente);
+	public MedicoModel solicitarCriarMedico(ControladorMedico controladorMedico, String nome, String crm, boolean plantao, String areaPlantao) {
+		return controladorGerente.criarMedico(controladorMedico, nome, crm, plantao, areaPlantao);
 	}
 	
 	public PacienteModel solicitarCriarPaciente(ControladorPaciente controladorPaciente, String cpfAssistente, String nome, String cpfPaciente, String email, String endereco) {
 		return controladorAssistente.criarPaciente(controladorPaciente, cpfAssistente, nome, cpfPaciente, email, endereco);
 	}
 	
-	public ReceitaModel solicitarCriarReceita(ControladorPaciente controladorPaciente, String cpfPaciente, String dosagem, int qtdDias, Date horario, String cpfMedico) {
-		return controladorMedico.criarReceita(controladorPaciente, cpfPaciente, dosagem, qtdDias, horario, cpfMedico);
+	public ReceitaModel solicitarCriarReceita(String nome, float dosagem, Date horario, int qtdDias) {
+		return controladorMedico.criarReceita(nome, dosagem, horario, qtdDias);
 	}
 	
-	public TratamentoModel solicitarCriarTratamento(ControladorPaciente controladorPaciente, String cpfPaciente, ArrayList<String> recomendacoes, String cpfMedico) {
-		return controladorMedico.criarTratamento(controladorPaciente, cpfPaciente, recomendacoes, cpfMedico);
+	public TratamentoModel solicitarCriarTratamento(ControladorPaciente controladorPaciente, String cpfPaciente, ArrayList<String> recomendacoes, String crm) {
+		return controladorMedico.criarTratamento(controladorPaciente, cpfPaciente, recomendacoes, crm);
+	}
+	
+	public TriagemModel solicitarFazerTriagem(ControladorPaciente controladorPaciente, String cpfFuncionario, String cpfPaciente, float altura, float pressao, float peso, float temperatura, String sintomas) {
+		return controladorAssistente.criarTriagem(controladorPaciente, cpfFuncionario, cpfPaciente, altura, pressao, peso, temperatura, sintomas);
+	}
+	
+	public PacienteModel solicitarPesquisarPaciente(ControladorPaciente controladorPaciente, String cpfFuncionario, String cpfPaciente) {
+		return controladorAssistente.pesquisarPaciente(controladorPaciente, cpfFuncionario, cpfPaciente);
 	}
 }

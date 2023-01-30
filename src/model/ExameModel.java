@@ -3,7 +3,7 @@ package model;
 public class ExameModel {
 	// Variáveis
 	
-	private int idDiagnostico;
+	private int idExame;
 	private String nomeExame;
 	private String nomePaciente;
 	private String nomeMedico;
@@ -12,10 +12,10 @@ public class ExameModel {
 	
 	// Construtor
 	
-	public ExameModel(int idDiagnostico, String nomeExame, String nomePaciente, String nomeMedico,
+	public ExameModel(int idExame, String nomeExame, String nomePaciente, String nomeMedico,
 			String resultadoExame, boolean grave) {
 		super();
-		this.idDiagnostico = idDiagnostico;
+		this.idExame = idExame;
 		this.nomeExame = nomeExame;
 		this.nomePaciente = nomePaciente;
 		this.nomeMedico = nomeMedico;
@@ -25,12 +25,12 @@ public class ExameModel {
 
 	// Getters e Setters
 	
-	public int getIdDiagnostico() {
-		return idDiagnostico;
+	public int getIdExame() {
+		return idExame;
 	}
 
-	public void setIdDiagnostico(int idDiagnostico) {
-		this.idDiagnostico = idDiagnostico;
+	public void setIdExame(int idExame) {
+		this.idExame = idExame;
 	}
 
 	public String getNomeExame() {

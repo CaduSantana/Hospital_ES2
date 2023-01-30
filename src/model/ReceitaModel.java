@@ -5,7 +5,7 @@ import java.util.Date;
 public class ReceitaModel {
 	// Variáveis
 	
-	private int idDiagnostico;
+	private int idReceita;
 	private String nome;
 	private float dosagem;
 	private Date horario;
@@ -13,9 +13,9 @@ public class ReceitaModel {
 	
 	// Construtor
 	
-	public ReceitaModel(int idDiagnostico, String nome, float dosagem, Date horario, int qtdDias) {
+	public ReceitaModel(int idReceita, String nome, float dosagem, Date horario, int qtdDias) {
 		super();
-		this.idDiagnostico = idDiagnostico;
+		this.idReceita = idReceita;
 		this.nome = nome;
 		this.dosagem = dosagem;
 		this.horario = horario;
@@ -24,12 +24,12 @@ public class ReceitaModel {
 
 	// Getters e Setters
 	
-	public int getIdDiagnostico() {
-		return idDiagnostico;
+	public int getIdReceita() {
+		return idReceita;
 	}
 
-	public void setIdDiagnostico(int idDiagnostico) {
-		this.idDiagnostico = idDiagnostico;
+	public void setIdReceita(int idReceita) {
+		this.idReceita = idReceita;
 	}
 
 	public String getNome() {

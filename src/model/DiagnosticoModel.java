@@ -12,14 +12,12 @@ public class DiagnosticoModel {
 	private ArrayList<ReceitaModel> receita;
 	private ArrayList<ExameModel> exames;
 	private TratamentoModel tratamento;
-	private TratamentoModel triagem;
+	private TriagemModel triagem;
 	
 	// Construtor
 	
 	public DiagnosticoModel(int idDiagnostico, String nomePaciente, String nomeMedico, String causaDoProblema,
-			ArrayList<ReceitaModel> receita, ArrayList<ExameModel> exames, TratamentoModel tratamento,
-			TratamentoModel triagem) {
-		super();
+			ArrayList<ReceitaModel> receita, ArrayList<ExameModel> exames, TratamentoModel tratamento, TriagemModel triagem) {
 		this.idDiagnostico = idDiagnostico;
 		this.nomePaciente = nomePaciente;
 		this.nomeMedico = nomeMedico;
@@ -74,10 +72,10 @@ public class DiagnosticoModel {
 	public void setTratamento(TratamentoModel tratamento) {
 		this.tratamento = tratamento;
 	}
-	public TratamentoModel getTriagem() {
+	public TriagemModel getTriagem() {
 		return triagem;
 	}
-	public void setTriagem(TratamentoModel triagem) {
+	public void setTriagem(TriagemModel triagem) {
 		this.triagem = triagem;
 	}
 	
