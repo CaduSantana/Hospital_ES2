@@ -157,7 +157,7 @@ public class Database {
             outTriagem.close();
             fileOutTriagem.close();
             
-			FileOutputStream fileOutMedico = new FileOutputStream("medico.ser");
+			FileOutputStream fileOutMedico = new FileOutputStream("medicos.ser");
             ObjectOutputStream outMedico = new ObjectOutputStream(fileOutMedico);
             outMedico.writeObject(medicos);
             outMedico.close();

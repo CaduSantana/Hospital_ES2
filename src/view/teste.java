@@ -42,10 +42,14 @@ public class teste {
 //		Database.diagnosticos.add(controladorGeral.solicitarCriarDiagnositco(controladorPaciente, "28343544803", "12345", "Virose", exames, tratamento, triagem, receitas));
 //		
 //		Database.salvarDados();
-		Database.carregarDados();
+//		Database.carregarDados();
+//
+//		Database.listarAssistentes();
+//		System.out.println("Fim");
 
-		Database.listarAssistentes();
-		System.out.println("Fim");
+		MainWindow mainWindow = new MainWindow();
+		mainWindow.main(args);
+		
 	}
 
 }
